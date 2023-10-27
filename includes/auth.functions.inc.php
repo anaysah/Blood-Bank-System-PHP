@@ -76,3 +76,19 @@ function createUser($conn, $email, $name, $pass, $address, $city, $state, $posta
 
     return $result;
 }
+
+function loginUser($conn, $id, $pass, $passHashed, $userType)
+{
+    $checkPass = password_verify($pass, $passHashed);
+
+    if ($checkPass === false) {
+        $result = false;
+    } else if ($checkPass === true) {
+        session_start();
+        $_SESSION["id"] = $id;
+        $_SESSION["userType"] = $userType;
+
+        $result = true;
+    }
+    return $result;
+}
