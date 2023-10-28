@@ -16,9 +16,10 @@
             <div class="container d-flex justify-content-between align-items-center">
                 <h3 class="my-2">Blood Bank System</h3>
                 <nav>
-                    <ul class="list-unstyled m-0 d-flex">
-                        <li class="me-3"><a href="#" class="text-white">Login</a></li>
+                    <ul class="list-unstyled m-0 d-flex gap-2">
+                        <li><a href="#" class="text-white">Login</a></li>
                         <li><a href="#" class="text-white">Register</a></li>
+                        <li><a href='../includes/logout.inc.php' class="text-white">Logout</a></li>
                     </ul>
                 </nav>
             </div>
