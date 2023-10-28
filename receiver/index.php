@@ -7,7 +7,7 @@ isLogged("receiver");
 ?>
 <section>
     <div class="container">
-        <button type="button" class="btn btn-danger">Logout</button>
+        <h3>under development</h3>
     </div>
 </section>
 <?php include_once('../templates/footer.php') ?>

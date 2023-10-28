@@ -1,5 +1,8 @@
 <?php
 require_once('main.functions.inc.php');
+// Start or resume the session
+session_start();
+
 isLogged('hospital');
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
@@ -58,7 +61,7 @@ $bloodGroup = $_POST["blood_group"];
 $quantity = $_POST["quantity"];
 $collectedOn = $_POST["collectedOn"];
 $expirationDate = $_POST["expirationDate"];
-$acceptableRangeInDays = 45;
+$acceptableRangeInDays = 90;
 $acceptableRangeInMl = 500; // Replace with your desired range
 $hospitalId = $_SESSION['id'];
 

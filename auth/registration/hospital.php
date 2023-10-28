@@ -1,5 +1,4 @@
 <?php include_once('../../templates/header.php') ?>
-<link rel="stylesheet" href="../../styles/auth.css">
 <section>
     <div class="container">
         <h2 class="mt-5">Hospital Registration</h2>
