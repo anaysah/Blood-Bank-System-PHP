@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 28, 2023 at 12:57 PM
+-- Generation Time: Oct 28, 2023 at 08:21 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -42,13 +42,13 @@ CREATE TABLE `blood_samples` (
 --
 
 INSERT INTO `blood_samples` (`id`, `blood_group`, `quantity_in_ml`, `collected_on`, `expiration_date`, `hospital_id`, `date`) VALUES
-(2, 'A+', 300, '2023-10-28', '2023-11-09', 8, '2023-10-28 05:22:00'),
-(3, 'A-', 400, '2023-10-15', '2023-11-25', 8, '2023-10-28 05:29:12'),
-(4, 'AB-', 250, '2023-10-13', '2023-11-03', 8, '2023-10-28 05:53:40'),
-(5, 'B-', 500, '2023-10-04', '2023-10-27', 8, '2023-10-28 06:26:09'),
-(6, 'A+', 450, '2023-10-12', '2023-10-31', 8, '2023-10-28 06:40:48'),
-(7, 'B+', 450, '2023-10-05', '2023-10-31', 11, '2023-10-28 10:16:00'),
-(8, 'AB-', 500, '2023-10-19', '2024-01-16', 11, '2023-10-28 10:17:35');
+(9, 'A+', 500, '2023-10-27', '2023-12-11', 8, '2023-10-28 18:08:38'),
+(10, 'AB+', 400, '2023-10-26', '2023-12-05', 8, '2023-10-28 18:08:57'),
+(11, 'A-', 700, '2023-10-26', '2023-12-10', 19, '2023-10-28 18:11:10'),
+(12, 'O+', 200, '2023-10-25', '2023-12-24', 19, '2023-10-28 18:11:34'),
+(13, 'AB+', 300, '2023-10-21', '2023-12-10', 7, '2023-10-28 18:12:49'),
+(14, 'A-', 300, '2023-10-18', '2023-12-27', 7, '2023-10-28 18:13:03'),
+(15, 'B+', 200, '2023-10-12', '2023-11-01', 7, '2023-10-28 18:13:17');
 
 -- --------------------------------------------------------
 
@@ -116,7 +116,13 @@ CREATE TABLE `receiver` (
 
 INSERT INTO `receiver` (`id`, `name`, `email`, `password`, `blood_group`, `address`, `city`, `state`, `postal_code`, `phone_number`, `registration_date`) VALUES
 (2, 'a', 'a@a.com', '$2y$10$iJkTzZpr0HfGX/DO34/eCOpXKH9gi5Qv.XdcszP/kv9dX6BIm9omW', 'A+', '12', '12', '12', '12', '12', '2023-10-27'),
-(3, 'new nmae', 'a@aa.com', '$2y$10$ATFOOUBscifvExKUrhM10eZQpRszPSXRy3efXCW/s7kAOV4lUNtMC', 'B+', 'dd', 'dd', 'ss', '22', '22', '2023-10-28');
+(3, 'new nmae', 'a@aa.com', '$2y$10$ATFOOUBscifvExKUrhM10eZQpRszPSXRy3efXCW/s7kAOV4lUNtMC', 'B+', 'dd', 'dd', 'ss', '22', '22', '2023-10-28'),
+(4, 'John Doe', 'john@example.com', '$2y$10$GSCNagukslULXnjY50ALHe/Bms8tcL2BmkWEnI2XwVrIR9BSE.9jm', 'A+', '123 Elm Street', 'Anytown', 'CA', '12345', '555-555-5555', '2023-01-15'),
+(5, 'Mary Johnson', 'mary@example.com', '$2y$10$NQjRdnO/O8CpbToLuUD34uz.z0gLJXV08JtwDNBIfusumecHyXyW2', 'AB+', '567 Pine Street', 'Hometown', 'IL', '54321', '555-789-0123', '2023-04-05'),
+(6, 'David Lee', 'david@example.com', '$2y$10$zPUJSgtGp3N61u0rkoayj.wQQKqmxnZj0XttUL1Z2BOvggxKCo/lm', 'A-', '321 Cedar Avenue', 'Villageville', 'OH', '12345', '555-987-6543', '2023-05-15'),
+(7, 'Sarah Brown', 'sarah@example.com', '$2y$10$kK8F8Z0BcrnSaqyi7o1IO.Dln9EX0prEg4hk/7LV6nGusF02sUYu.', 'B+', '987 Redwood Lane', 'Metropolis', 'GA', '56789', '555-543-2109', '2023-06-20'),
+(8, 'Michael Wilson', 'michael@example.com', '$2y$10$V8izj2HfutVQySF1y.VJwOliM3fbvIhNCfEK.jumHKMOXOVRmt8FG', 'O-', '246 Birch Street', 'Smalltown', 'SC', '43210', '555-321-7654', '2023-07-01'),
+(9, 'Karen Davis', 'karen@example.com', '$2y$10$LiUXJ3FvRE4nhOed5NzAOePlAQfgUYu5mhv8QkR/AZDwNzSF.jt4C', 'A+', '654 Oakwood Road', 'Villageton', 'FL', '12345', '555-789-4321', '2023-08-10');
 
 -- --------------------------------------------------------
 
@@ -130,6 +136,17 @@ CREATE TABLE `request` (
   `sample_id` int(11) NOT NULL,
   `date` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `request`
+--
+
+INSERT INTO `request` (`id`, `receiver_id`, `sample_id`, `date`) VALUES
+(6, 9, 9, '2023-10-27 18:30:00'),
+(7, 7, 15, '2023-10-27 18:30:00'),
+(8, 5, 10, '2023-10-27 18:30:00'),
+(9, 5, 13, '2023-10-27 18:30:00'),
+(10, 6, 14, '2023-10-27 18:30:00');
 
 --
 -- Indexes for dumped tables
@@ -172,7 +189,7 @@ ALTER TABLE `request`
 -- AUTO_INCREMENT for table `blood_samples`
 --
 ALTER TABLE `blood_samples`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `hospital`
@@ -184,13 +201,13 @@ ALTER TABLE `hospital`
 -- AUTO_INCREMENT for table `receiver`
 --
 ALTER TABLE `receiver`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `request`
 --
 ALTER TABLE `request`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Constraints for dumped tables
