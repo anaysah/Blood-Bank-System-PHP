@@ -62,7 +62,7 @@ $quantity = $_POST["quantity"];
 $collectedOn = $_POST["collectedOn"];
 $expirationDate = $_POST["expirationDate"];
 $acceptableRangeInDays = 90;
-$acceptableRangeInMl = 500; // Replace with your desired range
+$acceptableRangeInMl = 1000; // Replace with your desired range
 $hospitalId = $_SESSION['id'];
 
 if (!isBloodGroupOk($bloodGroup)){

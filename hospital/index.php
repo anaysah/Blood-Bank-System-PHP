@@ -50,7 +50,6 @@ while ($row = mysqli_fetch_assoc($result)) {
                             ?>
                         </select>
                     </div>
-
                 </div>
                 <div class="row mb-2 gx-2">
                     <div class="col-md-7">
@@ -78,6 +77,11 @@ while ($row = mysqli_fetch_assoc($result)) {
                 </div>
                 <button type="submit" class="btn btn-primary btn-sm" name="submit">Add Sample</button>
             </form>
+            
+            <a href="/hospital/requests.php" class="btn btn-primary mt-3">View requests</a>
+            <div >
+            <small >Display all the requests made by patients and individuals in need.</small>
+            </div>
         </div>
         <div class="all-samples-box col">
             <h2>
