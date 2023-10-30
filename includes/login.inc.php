@@ -30,4 +30,4 @@ if (!loginUser($conn, $data['id'], $password, $data['password'], $userType)) {
     redirect($_SERVER['HTTP_REFERER'], "password is wrong");
 }
 
-redirect("/$userType", "Loged in");
+redirect("/", "Loged in");
